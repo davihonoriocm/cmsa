@@ -1,0 +1,31 @@
+:root {
+    --cor-primaria: #a22529;
+    --cor-secundaria: #db802d;
+    --cor-tercearia: #5d2818;
+    --cor-texto: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--cor-texto);
+}
+
+
+body {
+    background-color: var(--cor-primaria);
+    font-family: "Roboto Condensed";
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}

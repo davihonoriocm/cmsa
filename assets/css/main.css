@@ -47,11 +47,12 @@ main #home .photo {
 }
 
 main #home .photo div {
-    width: 24rem;
-    height: 24rem;
+    width: 30.5rem;
+    height: 30.5rem;
     background-color: var(--cor-texto);
     border-radius: 50%;
     overflow: hidden;
+    border: 0.4rem solid var(--cor-secundaria);
 }
 
 main #home .photo div:hover {
@@ -79,7 +80,7 @@ main #intencao .content {
     align-items: center;
     background-color: var(--cor-secundaria);
     border-radius: 3rem;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 main #intencao .content h2 {
@@ -97,6 +98,11 @@ main #intencao .content h2:hover {
     cursor: pointer;
 }
 
+main #intencao .content p {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
 main #intencao .content form {
     gap: 1rem;
     width: 80%;
@@ -109,9 +115,10 @@ main #intencao .content form {
 main #intencao .content form label {
     width: 100%;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 600;
     display: flex;
     justify-content: center;
+    font-size: 1.1rem;
 }
 
 main #intencao .content form label:hover {

@@ -77,7 +77,7 @@ main #intencao .content {
     height: 100%;
     justify-content: center;
     align-items: center;
-    background-color: rgba(245, 146, 33, 0.5);
+    background-color: var(--cor-secundaria);
     border-radius: 3rem;
     gap: 3rem;
 }
@@ -133,13 +133,13 @@ main #intencao .content form input:hover {
 
 main #intencao .content form button {
     width: 50%;
-    height: 2rem;
+    height: 3rem;
     background-color: var(--cor-primaria);
     border: none;
     border-radius: 1rem;
     text-transform: uppercase;
-    font-weight: 500;
-    font-size: 0.8rem;
+    font-weight: 700;
+    font-size: 0.9rem;
 }
 
 main #intencao .content form button:hover {
@@ -149,4 +149,86 @@ main #intencao .content form button:hover {
 
 main #intencao .content form button:active {
     transform: scale(0.8);
+}
+
+main #contact .benfeitoria {
+    width: 100%;
+    height: 100vh;
+    padding: 6vh 0;
+    /* border: solid white 1px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main #contact .benfeitoria h2 {
+    color: var(--cor-secundaria);
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-shadow: -0.8px -0.8px 0 white,0.8px -0.8px 0 white,-0.8px  0.8px 0 white,2px  0.8px 0 white;
+}
+
+main #contact .benfeitoria .textb {
+    width: 80%;
+    height: 80%;
+    padding: 0.25rem 2rem;
+    /* border: solid white 1px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-secundaria);
+    border-radius: 2rem;
+}
+
+main #contact .benfeitoria .textb h3 {
+    font-size: 1.35rem;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 0.05rem;
+}
+
+main #contact .benfeitoria .textb p {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main #contact .benfeitoria h2 {
+    font-size: 2.5rem;
+}
+
+main #contact .benfeitoria .a {
+    width: 20%;
+    height: 5vh;
+    background-color: var(--cor-secundaria);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0;
+    border: solid white 0.14rem;
+}
+
+main #contact .benfeitoria .a:hover {
+    background-color: var(--cor-primaria);
+    transform: scale(1.05);
+}
+
+main #contact .benfeitoria .a:active {
+    transform: scale(0.85);
+}
+
+main #contact .benfeitoria .a a{
+    font-weight: 500;
+}
+
+main #contact .benfeitoria .footerbenfeitoria {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+main #map .local {
+    width: 100%;
+    height: 100vh;
+    border: solid yellow 1px;
 }

@@ -48,7 +48,7 @@ Sagrado Amor é um chamado à intimidade com Deus por meio do coração imaculad
             <div class="content">
                 <h2>Partilhe <span>aqui</span> sua intenção</h2>
                 <p>Para que nosso ministério interceda e possamos rezar em nossas missas.</p>
-                <form method="post">
+                <form method="post" action="config/process.php">
                     <label for="intencaoi">Intenção de oração:</label>
                     <input type="text" name="intencaoi" id="intencaoi" placeholder="Ex: Pelas intenções do Papa">
                     <label for="nome">Nome:</label>
@@ -117,6 +117,44 @@ Esse é o nosso carisma. E com você ao nosso lado, ele alcançará ainda mais c
     <footer>
         <p>Sagrado Amor&copy; Fortaleza-CE 2025.</p>
     </footer>
+<script>
+    // Faz com que o navegador tente manter a posição de rolagem
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.get("status") === "sucesso") {
+        // Criação da mensagem no centro da tela
+        const msg = document.createElement("div");
+        msg.textContent = "Intenção enviada com sucesso!";
+        msg.style.position = "fixed";
+        msg.style.top = "50%";
+        msg.style.left = "50%";
+        msg.style.transform = "translate(-50%, -50%)";
+        msg.style.background = "#d4edda";
+        msg.style.color = "#155724";
+        msg.style.border = "2px solid #c3e6cb";
+        msg.style.padding = "20px 30px";
+        msg.style.borderRadius = "10px";
+        msg.style.fontSize = "18px";
+        msg.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
+        msg.style.zIndex = "9999";
+        msg.style.opacity = "1";
+        msg.style.transition = "opacity 1s ease";
+
+        document.body.appendChild(msg);
+
+        setTimeout(() => {
+            msg.style.opacity = "0";
+            setTimeout(() => msg.remove(), 1000);
+        }, 3000);
+
+        // Limpa o parâmetro da URL
+        history.replaceState(null, "", window.location.pathname + "#intencao");
+    }
+</script>
     <!-- <script src="assets/script.js"></script> -->
 </body>
 </html>

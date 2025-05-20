@@ -131,11 +131,16 @@ main #intencao .content form input {
     border-radius: 0.8rem;
     text-align: center;
     border: solid 0.06rem gray;
+    color: black;
 }
 
 main #intencao .content form input:hover {
     transform: scale(1.05);
     cursor: text;
+}
+
+main #intencaoi {
+    color: black;
 }
 
 main #intencao .content form button {

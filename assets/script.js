@@ -5,50 +5,52 @@ function enviarWhats() {
     window.open(url, '_blank');
 }
 
-//Espera o envio do form (Botão Submit) e so executa ao clicar
-document.getElementById("formInt").addEventListener("submit", function(e) {
-    
-    //Cancela o comportamento padrão do formulário. (Recarregar a página ao clicar)
+// Adiciona um ouvinte de evento para o envio do formulário.
+// Isso quer dizer: quando o formulário com id="formInt" for enviado, a função será executada.
+document.getElementById("formInt").addEventListener("submit", function (e) {
+
+    // Previne o comportamento padrão do formulário (que seria recarregar a página e enviar pela URL).
+    // Isso é importante para podermos tratar o envio com JavaScript de forma personalizada.
     e.preventDefault();
-    
-    //Guarda uma referencia para o proprio formulario que foi enviado, ou seja para sabermos de qual pergunta vem aquela resposta
+
+    // Aqui pegamos o próprio formulário que foi enviado.
+    // `e.target` se refere ao elemento que disparou o evento — neste caso, o <form>.
     const form = e.target;
-    
-    //Cria um pct de Dados em formato de OBJETO no JS.
-    const dados = {
-        intencao: form.intencaoi.value,
-        nome: form.nome.value
-    };
 
-    //Define a URL para onde os dados serão enviados - URL da API
-    const url = "https://script.google.com/macros/s/AKfycbygSyQRapjhqRmLSL0149poquy8tkV1BxEhCbUcvRypIQsM5X3bpsMkbgJnXmzOklsS/exec";
+    // Pegamos os valores digitados pelo usuário nos campos do formulário.
+    // Estamos acessando diretamente os elementos pelo atributo `name` definido no HTML.
+    const intencao = form.intencaoi.value;
+    const nome = form.nome.value;
 
-    //Inicia a requisição com Fetch para URL do servidor.
-    fetch(url,{
-        //Indica o metodo que queremos compartilhar os dads, no caso Post, mas pode ser Get,Put,Delete.
-        method: "POST",
-        //Diz ao servidor que estamos enviando dados no formato Json
-        headers: {
-            "Content-Type":"application/json"
-        },
+    // Aqui definimos a base da URL do Google Apps Script (Web App).
+    // É para essa URL que vamos mandar os dados.
+    // Substitua abaixo pela sua própria URL do Web App.
+    const baseUrl = "https://script.google.com/macros/s/AKfycbEXEMPLO/exec";
 
-        //Transforma o objeto em txt json
-        body: JSON.stringify(dados)
+    // Agora montamos a URL completa com os dados (método GET).
+    // Usamos encodeURIComponent() para evitar problemas com acentos, espaços e caracteres especiais.
+    const urlComDados = `${baseUrl}?intencao=${encodeURIComponent(intencao)}&nome=${encodeURIComponent(nome)}`;
 
-    })
-    //Dps da request send, aqui espera a resposta e transforma em txt
-    .then(res => res.text())
+    // Enviamos a requisição GET usando fetch.
+    // Como estamos usando método GET, os dados já estão embutidos na URL (urlComDados).
+    fetch(urlComDados)
+        // Quando o servidor responder, transformamos o conteúdo em texto.
+        .then(res => res.text())
 
-    //Mostra um alerta de envio
-    .then(retorno => {
-        alert("Intenção enviada com sucesso!!!");
-        
-        //Limpa o formulário
-        form.reset();
-    })
+        // Com o texto de resposta em mãos, mostramos a mensagem na página e limpamos o formulário.
+        .then(retorno => {
+            // Mostramos a resposta do servidor na tela, dentro do parágrafo com id="resposta".
+            document.getElementById("resposta").innerText = retorno;
 
-    .catch(erro => {
-        alert("Erro ao enviar intenção, Tente novamente, caso persistir entre em contato com Davi 85 99793-4089")
-        console.error(erro);
-    });
-})
+            // Limpamos os campos do formulário para uma nova submissão.
+            form.reset();
+        })
+
+        // Se acontecer algum erro (ex: sem internet ou URL errada), mostramos uma mensagem de erro no console e na tela.
+        .catch(err => {
+            console.error("Erro:", err);
+            document.getElementById("resposta").innerText = "Erro ao enviar. Tente novamente.";
+        });
+
+});
+

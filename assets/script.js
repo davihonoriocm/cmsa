@@ -40,7 +40,7 @@ document.getElementById("formInt").addEventListener("submit", function (e) {
         // Com o texto de resposta em mãos, mostramos a mensagem na página e limpamos o formulário.
         .then(retorno => {
             // Mostramos a resposta do servidor na tela, dentro do parágrafo com id="resposta".
-            document.getElementById("resposta").innerText = retorno;
+            alert(retorno);
 
             // Limpamos os campos do formulário para uma nova submissão.
             form.reset();
@@ -49,7 +49,7 @@ document.getElementById("formInt").addEventListener("submit", function (e) {
         // Se acontecer algum erro (ex: sem internet ou URL errada), mostramos uma mensagem de erro no console e na tela.
         .catch(err => {
             console.error("Erro:", err);
-            document.getElementById("resposta").innerText = "Erro ao enviar. Tente novamente.";
+            alert(err);
         });
 
 });

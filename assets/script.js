@@ -33,7 +33,7 @@ document.getElementById("formInt").addEventListener("submit", function(e) {
         },
 
         //Transforma o objeto em txt json
-        body: JSON,stringfy(dados)
+        body: JSON.stringify(dados)
 
     })
     //Dps da request send, aqui espera a resposta e transforma em txt

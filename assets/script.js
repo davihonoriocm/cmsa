@@ -6,17 +6,15 @@ function enviarWhats() {
     window.open(url, '_blank');
 }
 
-// Adiciona um ouvinte de evento para o envio do formulário.
-// Isso quer dizer: quando o formulário com id="formInt" for enviado, a função será executada.
 document.getElementById("formInt").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const form = e.target;
-    const intencao = form.intencao.value;
-    const nome = form.nome.value;
-    const baseurl = "https://script.google.com/macros/s/AKfycbwPQgfqS-0VDwT9gB5mF4O4m5jKJLuMs1KcbfLWfR4trZepqtf0d8ReaFH4Fb-YoNaH/exec";
-    const urlComDados = `${baseurl}?intencao=${encodeURIComponent(intencao)}&nome=${encodeURIComponent(nome)}`;
+    const intencao = form.elements["intencao"].value;
+    const nome = form.elements["nome"].value;
 
+    const baseurl = "https://script.google.com/macros/s/AKfycbzE1stXGc2U3HiKIdEr8Qyw9d_oxn-QOge8wYcPthtPzRUjEhcbKwirT1eLTWyHANwt/exec";
+    const urlComDados = `${baseurl}?intencao=${encodeURIComponent(intencao)}&nome=${encodeURIComponent(nome)}`;
     console.log("URL para envio:", urlComDados);
 
     fetch(urlComDados)
@@ -24,11 +22,10 @@ document.getElementById("formInt").addEventListener("submit", function (e) {
         .then(retorno => {
             alert(retorno);
             form.reset();
-            history.replaceState(null, '', window.location.pathname);
+            history.replaceState(null, '', window.location.pathname); // limpa a URL
         })
         .catch(err => {
             console.error("Erro:", err);
-            alert(err);
+            alert("Erro ao enviar os dados.");
         });
 });
-

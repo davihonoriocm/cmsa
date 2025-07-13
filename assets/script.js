@@ -25,11 +25,11 @@ document.getElementById("formInt").addEventListener("submit", function (e) {
     // Aqui definimos a base da URL do Google Apps Script (Web App).
     // É para essa URL que vamos mandar os dados.
     // Substitua abaixo pela sua própria URL do Web App.
-    const baseUrl = "https://script.google.com/macros/s/AKfycbxZ3fOn21s58aJqVuBWZ8bNAQtHligBJAQXIKF0peQ/dev";
+    const baseurl = "https://script.google.com/macros/s/AKfycbxCQSqGIYJLXRqld-gU5a_Se80LIYC7_OhBnBlNbSsn-TGAGEiJROeZcE1QdCwWSTXK/exec";
 
     // Agora montamos a URL completa com os dados (método GET).
     // Usamos encodeURIComponent() para evitar problemas com acentos, espaços e caracteres especiais.
-    const urlComDados = `${baseUrl}?intencao=${encodeURIComponent(intencao)}&nome=${encodeURIComponent(nome)}`;
+    const urlComDados = `${baseurl}?intencao=${encodeURIComponent(intencao)}&nome=${encodeURIComponent(nome)}`;
     console.log("URL para envio:", urlComDados);
     // Enviamos a requisição GET usando fetch.
     // Como estamos usando método GET, os dados já estão embutidos na URL (urlComDados).

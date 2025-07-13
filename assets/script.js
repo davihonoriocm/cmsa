@@ -14,7 +14,7 @@ document.getElementById("formInt").addEventListener("submit", function (e) {
     const form = e.target;
     const intencao = form.intencao.value;
     const nome = form.nome.value;
-    const baseurl = "https://script.google.com/macros/s/AKfycbzE1stXGc2U3HiKIdEr8Qyw9d_oxn-QOge8wYcPthtPzRUjEhcbKwirT1eLTWyHANwt/exec";
+    const baseurl = "https://script.google.com/macros/s/AKfycbwPQgfqS-0VDwT9gB5mF4O4m5jKJLuMs1KcbfLWfR4trZepqtf0d8ReaFH4Fb-YoNaH/exec";
     const urlComDados = `${baseurl}?intencao=${encodeURIComponent(intencao)}&nome=${encodeURIComponent(nome)}`;
 
     console.log("URL para envio:", urlComDados);

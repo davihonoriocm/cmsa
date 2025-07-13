@@ -30,7 +30,7 @@ document.getElementById("formInt").addEventListener("submit", function (e) {
     // Agora montamos a URL completa com os dados (método GET).
     // Usamos encodeURIComponent() para evitar problemas com acentos, espaços e caracteres especiais.
     const urlComDados = `${baseUrl}?intencao=${encodeURIComponent(intencao)}&nome=${encodeURIComponent(nome)}`;
-
+    console.log("URL para envio:", urlComDados);
     // Enviamos a requisição GET usando fetch.
     // Como estamos usando método GET, os dados já estão embutidos na URL (urlComDados).
     fetch(urlComDados)

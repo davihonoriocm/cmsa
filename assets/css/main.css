@@ -65,13 +65,13 @@ main #home .photo div img {
     transform: translate(0, 1.5rem);
 }
 
-main #intencao {
+main #intencaoi {
     width: 100%;
     height: 100%;
     padding: 8vh 18vw;
 }
 
-main #intencao .content {
+main #intencaoi .content {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -83,27 +83,27 @@ main #intencao .content {
     gap: 2rem;
 }
 
-main #intencao .content h2 {
+main #intecaoi .content h2 {
     font-weight: 500;
     text-transform: uppercase;
     font-size: 2rem;
 
 }
 
-main #intencao .content h2 span {
+main #intecaoi .content h2 span {
     color: var(--cor-primaria)
 }
-main #intencao .content h2:hover {
+main #intecaoi .content h2:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
 
-main #intencao .content p {
+main #intecaoi .content p {
     font-size: 1.3rem;
     font-weight: 500;
 }
 
-main #intencao .content form {
+main #intecaoi .content form {
     gap: 1rem;
     width: 80%;
     display: flex;
@@ -112,7 +112,7 @@ main #intencao .content form {
     align-items: center;
 }
 
-main #intencao .content form label {
+main #intecaoi .content form label {
     width: 100%;
     text-transform: uppercase;
     font-weight: 600;
@@ -121,11 +121,11 @@ main #intencao .content form label {
     font-size: 1.1rem;
 }
 
-main #intencao .content form label:hover {
+main #intecaoi .content form label:hover {
     transform: scale(1.05);
 }
 
-main #intencao .content form input {
+main #intecaoi .content form input {
     width: 100%;
     height: 1.7rem;
     border-radius: 0.8rem;
@@ -133,12 +133,12 @@ main #intencao .content form input {
     border: solid 0.06rem gray;
 }
 
-main #intencao .content form input:hover {
+main #intecaoi .content form input:hover {
     transform: scale(1.05);
     cursor: text;
 }
 
-main #intencao .content form button {
+main #intecaoi .content form button {
     width: 50%;
     height: 3rem;
     background-color: var(--cor-primaria);
@@ -149,12 +149,12 @@ main #intencao .content form button {
     font-size: 0.9rem;
 }
 
-main #intencao .content form button:hover {
+main #intecaoi .content form button:hover {
     transform: scale(1.2);
     cursor: pointer;
 }
 
-main #intencao .content form button:active {
+main #intecaoi .content form button:active {
     transform: scale(0.8);
 }
 

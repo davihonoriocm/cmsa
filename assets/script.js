@@ -25,7 +25,7 @@ document.getElementById("formInt").addEventListener("submit", function (e) {
     // Aqui definimos a base da URL do Google Apps Script (Web App).
     // É para essa URL que vamos mandar os dados.
     // Substitua abaixo pela sua própria URL do Web App.
-    const baseurl = "https://script.google.com/macros/s/AKfycbxCQSqGIYJLXRqld-gU5a_Se80LIYC7_OhBnBlNbSsn-TGAGEiJROeZcE1QdCwWSTXK/exec";
+    const baseurl = "https://script.google.com/macros/s/AKfycbzE1stXGc2U3HiKIdEr8Qyw9d_oxn-QOge8wYcPthtPzRUjEhcbKwirT1eLTWyHANwt/exec";
 
     // Agora montamos a URL completa com os dados (método GET).
     // Usamos encodeURIComponent() para evitar problemas com acentos, espaços e caracteres especiais.

@@ -1,3 +1,4 @@
+
 function enviarWhats() {
     const numero = "558598077612"; // Seu número com DDI e DDD
     const texto = document.getElementById("msg").value;
@@ -7,7 +8,7 @@ function enviarWhats() {
 
 // Adiciona um ouvinte de evento para o envio do formulário.
 // Isso quer dizer: quando o formulário com id="formInt" for enviado, a função será executada.
-document.getElementById("formInt").addEventListener("submit", function(e) {
+document.getElementById("formInt").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const form = e.target;
@@ -18,11 +19,12 @@ document.getElementById("formInt").addEventListener("submit", function(e) {
 
     console.log("URL para envio:", urlComDados);
 
-    fetch(urlComDados) {
+    fetch(urlComDados)
         .then(res => res.text())
         .then(retorno => {
             alert(retorno);
             form.reset();
+            history.replaceState(null, '', window.location.pathname);
         })
         .catch(err => {
             console.error("Erro:", err);
